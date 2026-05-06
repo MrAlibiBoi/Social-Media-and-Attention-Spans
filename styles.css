@@ -1,0 +1,394 @@
+/* =============================================
+   Social Media & Attention Span — Shared Styles
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --blue-deep:    #2C5F85;
+  --blue-mid:     #4A8AB4;
+  --blue-soft:    #7FB3D3;
+  --blue-light:   #C5DCF0;
+  --blue-pale:    #EBF4FB;
+  --blue-ghost:   #F4F9FD;
+  --white:        #FFFFFF;
+  --text-dark:    #1E3347;
+  --text-body:    #3A5068;
+  --text-muted:   #6A90AA;
+  --border:       #D0E6F5;
+  --shadow-sm:    0 2px 12px rgba(44, 95, 133, 0.08);
+  --shadow-md:    0 6px 30px rgba(44, 95, 133, 0.13);
+  --radius:       12px;
+  --nav-height:   66px;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  background: var(--blue-ghost);
+  color: var(--text-body);
+  line-height: 1.75;
+  min-height: 100vh;
+}
+
+img { max-width: 100%; display: block; border-radius: var(--radius); }
+
+a { color: var(--blue-deep); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--blue-mid); }
+
+/* ── Navigation ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  margin-right: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-radius: 6px;
+  transition: background .2s, color .2s;
+}
+
+.nav-links a:hover {
+  background: var(--blue-pale);
+  color: var(--blue-deep);
+}
+
+.nav-links a.active {
+  background: var(--blue-pale);
+  color: var(--blue-deep);
+  font-weight: 600;
+}
+
+/* ── Hero Banner ── */
+.hero {
+  background: linear-gradient(135deg, rgba(44, 95, 133, 0.6) 0%, rgba(74, 138, 180, 0.6) 60%, rgba(127, 179, 211, 0.6) 100%), url("assets/steps-together-internet-addiction-woman-touch-cellphone-banner.png") center/cover;
+  color: var(--white);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+}
+
+.hero p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  max-width: 640px;
+  margin: 0 auto 2rem;
+}
+
+.hero-meta {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.06em;
+}
+
+/* ── Page Header (non-home) ── */
+.page-header {
+  background: linear-gradient(120deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+  color: var(--white);
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.page-header .eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 0.6rem;
+}
+
+.page-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ── Main Content ── */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.2rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+  margin-bottom: 0.8rem;
+  line-height: 1.25;
+}
+
+.card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--blue-deep);
+  margin-bottom: 0.5rem;
+}
+
+.card p { margin-bottom: 1rem; color: var(--text-body); }
+.card p:last-child { margin-bottom: 0; }
+
+.card video {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  max-height: 420px;
+  height: auto;
+  margin: 1.25rem auto 0;
+  border-radius: 12px;
+}
+
+/* ── Section headings ── */
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+  margin-bottom: 1.2rem;
+}
+
+/* ── Grid layouts ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Stat Blocks ── */
+.stat-card {
+  background: var(--blue-pale);
+  border: 1px solid var(--blue-light);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ── Highlight strip ── */
+.highlight-strip {
+  background: var(--blue-pale);
+  border-left: 4px solid var(--blue-mid);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.2rem 1.6rem;
+  margin: 1.2rem 0;
+  font-style: italic;
+  color: var(--blue-deep);
+}
+
+/* ── Embed placeholder ── */
+.embed-box {
+  background: var(--blue-pale);
+  border: 2px dashed var(--blue-light);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  gap: 0.6rem;
+}
+
+.embed-box .embed-icon {
+  font-size: 2.5rem;
+  opacity: 0.4;
+}
+
+.embed-box p {
+  font-size: 0.85rem;
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* ── Tags / pills ── */
+.tag {
+  display: inline-block;
+  background: var(--blue-light);
+  color: var(--blue-deep);
+  border-radius: 999px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin: 0.15rem;
+}
+
+/* ── References list ── */
+.ref-list {
+  list-style: none;
+  counter-reset: ref-counter;
+}
+
+.ref-list li {
+  counter-increment: ref-counter;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.ref-list li:last-child { border-bottom: none; }
+
+.ref-list li::before {
+  content: counter(ref-counter);
+  background: var(--blue-pale);
+  color: var(--blue-deep);
+  border-radius: 50%;
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.ref-list a {
+  display: inline;
+  white-space: nowrap;
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--blue-deep);
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+footer strong { color: rgba(255,255,255,0.85); }
+
+/* ── Divider ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .nav-brand { display: none; }
+  .nav-links a { padding: 0.35rem 0.55rem; font-size: 0.72rem; }
+  main { padding: 2rem 1.2rem 4rem; }
+  .card { padding: 1.4rem 1.2rem; }
+}
